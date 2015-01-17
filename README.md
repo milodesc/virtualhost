@@ -1,7 +1,7 @@
 Virtualhost Manage Script
 ===========
 
-Bash Script to allow create or delete apache/nginx virtual hosts on Ubuntu on a quick way.
+Bash Script to allow create or delete apache virtual hosts on Ubuntu on a quick way.
 
 ## Installation ##
 
@@ -20,8 +20,6 @@ if you copy it without the .sh extension:
         $ cd /usr/local/bin
         $ wget -O virtualhost https://raw.githubusercontent.com/RoverWire/virtualhost/master/virtualhost.sh
         $ chmod +x virtualhost
-        $ wget -O virtualhost-nginx https://raw.githubusercontent.com/RoverWire/virtualhost/master/virtualhost-nginx.sh
-        $ chmod +x virtualhost-nginx
 
 ## Usage ##
 
