@@ -2,7 +2,7 @@
 ### Set default parameters
 action=$1
 domain=$2
-rootdir=$3
+rootdir=${domain//./}
 owner=$(who am i | awk '{print $1}')
 email='webmaster@localhost'
 sitesEnable='/etc/apache2/sites-enabled/'
@@ -28,10 +28,6 @@ do
 	echo -e "Please provide domain. e.g.dev,staging"
 	read  domain
 done
- 
-if [ "$rootdir" == "" ]; then
-	rootdir=${domain//./}
-fi
  
 if [ "$action" == 'create' ] 
 	then
@@ -106,7 +102,6 @@ if [ "$action" == 'create' ]
  
 		### show the finished message
 		echo -e "Complete! \nYou now have a new Virtual Host \nYour new host is: http://"$domain" \nAnd its located at "$userDir$rootdir
-		exit;
 	else
 		### check whether domain already exists
 		if ! [ -e $sitesAvailabledomain ]; then
