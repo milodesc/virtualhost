@@ -16,4 +16,4 @@ done
 
 account_pass="admin"
 drush site-install standard --db-url="mysql://$dbuser:$dbpwd@localhost/$rootdir" --site-name=$rootdir --account-pass=$account_pass --yes
-echo -e "Drupal installed! \nYou now have a new Drupal site. \nYour new host is: http://"$domain" \nAnd its located at $userDir$rootdir"
+echo -e "Drupal installed! \nYou now have a new Drupal site. \nYour new host is: http://"$domain" \nIt's located at $userDir$rootdir"

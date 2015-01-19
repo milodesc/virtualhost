@@ -101,7 +101,7 @@ if [ "$action" == 'create' ]
 		/etc/init.d/apache2 reload
  
 		### show the finished message
-		echo -e "Complete! \nYou now have a new Virtual Host \nYour new host is: http://"$domain" \nAnd its located at $userDir$rootdir\n\n"
+		echo -e "Complete! \nYou now have a new Virtual Host \nYour new host is: http://"$domain" \nIt's located at $userDir$rootdir\n\n"
 
 		### prompt user to install drupal via drush.
 		echo -e "Would you like to install drupal? [Y,n]"
@@ -112,7 +112,7 @@ if [ "$action" == 'create' ]
 	else
 		### check whether domain already exists
 		if ! [ -e $sitesAvailabledomain ]; then
-			echo -e 'This domain dont exists.\nPlease Try Another one'
+			echo -e "This domain doesn't exist.\nPlease try Another one."
 			exit;
 		else
 			### Delete domain in /etc/hosts
@@ -131,10 +131,10 @@ if [ "$action" == 'create' ]
  
 		### check if directory exists or not
 		if [ -d $userDir$rootdir ]; then
-			echo -e 'Delete host root directory ? (s/n)'
+			echo -e 'Delete the host root directory ? (Y/n)'
 			read deldir
 
-			if [ "$deldir" == 's' -o "$deldir" == 'S' ]; then
+			if [ "$deldir" == 'Y' -o "$deldir" == 'y' ]; then
 				### Delete the directory
 				rm -rf $userDir$rootdir
 				echo -e 'Directory deleted'
