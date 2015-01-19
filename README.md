@@ -9,16 +9,12 @@ Bash Script to allow create or delete apache virtual hosts and optionally instal
 2. Apply permission to execute:
 
         $ chmod +x /path/to/virtualhost.sh
-        $ chmod +x /path/to/drupal_virtualhost.sh
   
 ## Usage ##
 
 Basic command line syntax:
 
-    $ sudo sh /path/to/virtualhost.sh [create | delete] [domain] 
-	OR
-    $ sudo sh /path/to/drupal_virtualhost.sh [create | delete] [domain] [database user] [database password]
-    
+    $ sudo sh /path/to/virtualhost.sh [create | delete] [domain]    
 
 ### Examples ###
 

@@ -101,7 +101,14 @@ if [ "$action" == 'create' ]
 		/etc/init.d/apache2 reload
  
 		### show the finished message
-		echo -e "Complete! \nYou now have a new Virtual Host \nYour new host is: http://"$domain" \nAnd its located at "$userDir$rootdir
+		echo -e "Complete! \nYou now have a new Virtual Host \nYour new host is: http://"$domain" \nAnd its located at $userDir$rootdir\n\n"
+
+		### prompt user to install drupal via drush.
+		echo -e "Would you like to install drupal? [Y,n]"
+		read install_drupal
+		if [[ $install_drupal == "Y" || $install_drupal == "y" ]]; then
+			source drupal_virtualhost.sh
+		fi
 	else
 		### check whether domain already exists
 		if ! [ -e $sitesAvailabledomain ]; then
@@ -140,5 +147,6 @@ if [ "$action" == 'create' ]
  
 		### show the finished message
 		echo -e "Complete!\nYou just removed Virtual Host "$domain
+		echo -e "\nNote that any databases associated with the local host have not been deleted."
 		exit 0;
 fi
